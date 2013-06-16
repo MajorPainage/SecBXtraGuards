@@ -1,0 +1,215 @@
+start_guardsg18g = {
+private["_spawnTaviGroupLeaderg18g","_AISgroupg18g","_x10","_rndCountg18g","_rnd10","_positiong18g","_modelarrayg18g","_startposg18g","_unit10","_units10","_id101"];
+waitUntil{!isNil "BIS_fnc_selectRandom"};
+ 
+east setFriend [west,0];
+east setFriend [sideLogic,1];
+ 
+_AISgroupg18g = createGroup east;  
+_modelarrayg18g = ["SectorZ_def","SectorZ_def","SectorZ_def"];
+ 
+_startposg18g = [14849.3,9924.72,2.8672];
+ 
+_positiong18g = [14849.3,9924.72,2.8672];
+_rndCountg18g = 11;
+_rnd = random 1;
+for "_x" from 1 to _rndCountg18g do {
+private["_spawnAISg18g","_bodynameig18g","_soldermodelg18g","_spawnTaviGroupLeaderg18g"];
+_bodynameig18g = format ["TavianaGuardg18g%1",_x];
+ 
+if(_x == 1) then {
+_soldermodelg18g = _modelarrayg18g select (round(random ((count _modelarrayg18g) - 1)));
+_soldermodelg18g createunit [[14849.3,9924.72,2.8672], _AISgroupg18g, "_spawnTaviGroupLeaderg18g = this; TavianaSquadg18g = group this;"];
+ 
+_spawnTaviGroupLeaderg18g enableAI "TARGET";
+_spawnTaviGroupLeaderg18g enableAI "AUTOTARGET";
+_spawnTaviGroupLeaderg18g enableAI "MOVE";
+_spawnTaviGroupLeaderg18g enableAI "ANIM";
+_spawnTaviGroupLeaderg18g enableAI "FSM";
+_spawnTaviGroupLeaderg18g allowDammage true;
+_spawnTaviGroupLeaderg18g setCombatMode "YELLOW";
+_spawnTaviGroupLeaderg18g setBehaviour "COMBAT";
+_spawnTaviGroupLeaderg18g setSkill ["aimingAccuracy",1];
+_spawnTaviGroupLeaderg18g setSkill ["aimingShake",1];
+_spawnTaviGroupLeaderg18g setSkill ["aimingSpeed",1];
+_spawnTaviGroupLeaderg18g setSkill ["commanding",1];
+_spawnTaviGroupLeaderg18g setSkill ["aimingAccuracy",1];
+_spawnTaviGroupLeaderg18g setSkill ["endurance",1];
+_spawnTaviGroupLeaderg18g setSkill ["spotDistance",1];
+_spawnTaviGroupLeaderg18g setSkill ["spotTime",1];
+_spawnTaviGroupLeaderg18g setSkill ["courage",1];
+_spawnTaviGroupLeaderg18g setSkill ["reloadSpeed",1];
+_spawnTaviGroupLeaderg18g setSkill ["general",1];
+_spawnTaviGroupLeaderg18g setPosASL [14849.3,9924.72,2.8672];
+_spawnTaviGroupLeaderg18g addMagazine "ItemBandage";
+_spawnTaviGroupLeaderg18g addMagazine "ItemBandage";          
+_spawnTaviGroupLeaderg18g addweapon "Binocular";
+_spawnTaviGroupLeaderg18g addweapon "ItemCompass";
+_spawnTaviGroupLeaderg18g addweapon "ItemMap";
+_spawnTaviGroupLeaderg18g addweapon "ItemHatchet";
+_spawnTaviGroupLeaderg18g addweapon "ItemKnife";
+_spawnTaviGroupLeaderg18g addweapon "ItemMatchbox";
+ 
+_spawnTaviGroupLeaderg18g addweapon "Sa58V_EP1";
+_spawnTaviGroupLeaderg18g addMagazine "30Rnd_762x39_SA58";
+_spawnTaviGroupLeaderg18g addMagazine "30Rnd_762x39_SA58";
+_spawnTaviGroupLeaderg18g addMagazine "30Rnd_762x39_SA58";
+_spawnTaviGroupLeaderg18g addMagazine "30Rnd_762x39_SA58";
+_spawnTaviGroupLeaderg18g addMagazine "30Rnd_762x39_SA58";
+_spawnTaviGroupLeaderg18g addMagazine "30Rnd_762x39_SA58";
+_spawnTaviGroupLeaderg18g selectWeapon "Sa58V_EP1";
+_spawnTaviGroupLeaderg18g addEventHandler ["Fired", {_this call player_fired;}];
+_spawnTaviGroupLeaderg18g addmpeventhandler ["Killed",{_this call delete_guardia;}];
+_spawnTaviGroupLeaderg18g setVariable ["bodyname",_bodynameig18g,false];
+_spawnTaviGroupLeaderg18g setVariable ["delmeplease",_bodynameig18g,false];
+_spawnTaviGroupLeaderg18g disableConversation true;
+_spawnTaviGroupLeaderg18g setDir 274;
+_spawnTaviGroupLeaderg18g setdamage 0.01;
+ 
+ 
+ 
+ 
+ 
+ 
+} else {
+_soldermodelg18g = _modelarrayg18g select (round(random ((count _modelarrayg18g) - 1)));
+if(_x == 2) then {
+_soldermodelg18g createunit [[14848.8,9934.79,2.8672], _AISgroupg18g, "_spawnAISg18g = this;"];
+_spawnAISg18g setPosASL [14848.8,9934.79,2.8672];
+_spawnAISg18g setDir 255;
+};
+if(_x == 3) then {
+_soldermodelg18g createunit [[14860.2,9930.76,2.8672], _AISgroupg18g, "_spawnAISg18g = this;"];
+_spawnAISg18g setPosASL [14860.2,9930.76,2.8672];
+_spawnAISg18g setDir 265;
+};
+if(_x == 4) then {
+_soldermodelg18g createunit [[14861.2,9925.44,2.8672], _AISgroupg18g, "_spawnAISg18g = this;"];
+_spawnAISg18g setPosASL [14838.4,9916.73,2.96353];
+_spawnAISg18g setDir 273;
+};
+if(_x == 5) then {
+_soldermodelg18g createunit [[14820,9914.96,2.8672], _AISgroupg18g, "_spawnAISg18g = this;"];
+_spawnAISg18g setPosASL [14820,9914.96,2.8672];
+_spawnAISg18g setDir 22;
+};
+if(_x == 6) then {
+_soldermodelg18g createunit [[14848.7,9913.41,2.8672], _AISgroupg18g, "_spawnAISg18g = this;"];
+_spawnAISg18g setPosASL [14848.7,9913.41,2.8672];
+_spawnAISg18g setDir 338;
+};
+if(_x == 7) then {  
+_soldermodelg18g createunit [[14846,9922.02,6.42387], _AISgroupg18g, "_spawnAISg18g = this;"];
+_spawnAISg18g setPosASL [14846,9922.02,6.92387];
+_spawnAISg18g setDir 283;
+};
+if(_x == 8) then {
+_soldermodelg18g createunit [[14854.9,9912.91,6.42387], _AISgroupg18g, "_spawnAISg18g = this;"];
+_spawnAISg18g setPosASL [14854.9,9912.91,6.92387];
+_spawnAISg18g setDir 315;
+};
+if(_x == 9) then {
+_soldermodelg18g createunit [[14847.7,9915.74,6.42387], _AISgroupg18g, "_spawnAISg18g = this;"];
+_spawnAISg18g setPosASL [14847.7,9915.74,6.92387];
+_spawnAISg18g setDir 271;
+};
+if(_x == 10) then {
+_soldermodelg18g createunit [[14861.3,9939.85,6.42387], _AISgroupg18g, "_spawnAISg18g = this;"];
+_spawnAISg18g setPosASL [14861.3,9939.85,6.92387];
+_spawnAISg18g setDir 230;
+};
+if(_x == 11) then {
+"SectorB_gov" createunit [[22128.8,19853.7,14.6355], _AISgroupg18g, "_spawnAISg18g = this;"];
+_spawnAISg18g setPosASL [22128.8,19853.7,14.6355];
+_spawnAISg18g setDir 129;
+ 
+_spawnAISg18g addMagazine "ItemBpt_b3";
+_spawnAISg18g addMagazine "ItemBpt_h3";
+_spawnAISg18g addweapon "Colt1911";
+_spawnAISg18g addMagazine "7Rnd_45ACP_1911";
+_spawnAISg18g addMagazine "7Rnd_45ACP_1911";
+_spawnAISg18g addMagazine "7Rnd_45ACP_1911";
+ 
+};
+if(_x == 11) then {
+_spawnAISg18g enableAI "TARGET";
+_spawnAISg18g enableAI "AUTOTARGET";
+_spawnAISg18g disableAI "MOVE";
+_spawnAISg18g enableAI "ANIM";
+_spawnAISg18g disableAI "FSM";
+_spawnAISg18g setunitpos "middle";
+} else {
+_spawnAISg18g enableAI "TARGET";
+_spawnAISg18g enableAI "AUTOTARGET";
+_spawnAISg18g enableAI "MOVE";
+_spawnAISg18g enableAI "ANIM";
+_spawnAISg18g enableAI "FSM";
+_spawnAISg18g allowDammage true;
+_spawnAISg18g setCombatMode "YELLOW";
+_spawnAISg18g setBehaviour "COMBAT";
+};
+_spawnAISg18g setSkill ["aimingAccuracy",1];
+_spawnAISg18g setSkill ["aimingShake",1];
+_spawnAISg18g setSkill ["aimingSpeed",1];
+_spawnAISg18g setSkill ["commanding",1];
+_spawnAISg18g setSkill ["aimingAccuracy",1];
+_spawnAISg18g setSkill ["endurance",1];
+_spawnAISg18g setSkill ["spotDistance",1];
+_spawnAISg18g setSkill ["spotTime",1];
+_spawnAISg18g setSkill ["courage",1];
+_spawnAISg18g setSkill ["reloadSpeed",1];
+_spawnAISg18g setSkill ["general",1];
+if(_x == 2) then {
+_spawnAISg18g addweapon "AKS_74_kobra";
+_spawnAISg18g addMagazine "30Rnd_545x39_AK";
+_spawnAISg18g addMagazine "30Rnd_545x39_AK";
+_spawnAISg18g addMagazine "30Rnd_545x39_AK";
+_spawnAISg18g addMagazine "30Rnd_545x39_AK";
+_spawnAISg18g addMagazine "30Rnd_545x39_AK";
+_spawnAISg18g selectWeapon "AKS_74_kobra";
+};
+if(_x == 3) then {
+_spawnAISg18g addweapon "AK_47_M";
+_spawnAISg18g addMagazine "30Rnd_762x39_AK47";
+_spawnAISg18g addMagazine "30Rnd_762x39_AK47";
+_spawnAISg18g addMagazine "30Rnd_762x39_AK47";
+_spawnAISg18g addMagazine "30Rnd_762x39_AK47";
+_spawnAISg18g addMagazine "30Rnd_762x39_AK47";
+_spawnAISg18g selectWeapon "AK_47_M";
+};
+if(_x == 4) then {
+_spawnAISg18g addweapon "AK_47_M";
+_spawnAISg18g addMagazine "30Rnd_762x39_AK47";
+_spawnAISg18g addMagazine "30Rnd_762x39_AK47";
+_spawnAISg18g addMagazine "30Rnd_762x39_AK47";
+_spawnAISg18g selectWeapon "AK_47_M";
+};
+if(_x == 5) then {
+_spawnAISg18g addweapon "AKS_74_kobra";
+_spawnAISg18g addMagazine "30Rnd_545x39_AK";
+_spawnAISg18g addMagazine "30Rnd_545x39_AK";
+_spawnAISg18g addMagazine "30Rnd_545x39_AK";
+_spawnAISg18g addMagazine "30Rnd_545x39_AK";
+_spawnAISg18g selectWeapon "AKS_74_kobra";
+};
+if((_x >= 6) and (_x < 11)) then {
+_spawnAISg18g addweapon "AKS_74_kobra";
+_spawnAISg18g addMagazine "30Rnd_545x39_AK";
+_spawnAISg18g addMagazine "30Rnd_545x39_AK";
+_spawnAISg18g addMagazine "30Rnd_545x39_AK";
+_spawnAISg18g addMagazine "30Rnd_545x39_AK";
+_spawnAISg18g selectWeapon "AKS_74_kobra";
+};
+_spawnAISg18g setVariable ["bodyname",_bodynameig18g,false];           
+_spawnAISg18g setVariable ["delmeplease",_bodynameig18g,false];
+_spawnAISg18g addEventHandler ["Fired", {_this call player_fired;}];
+_spawnAISg18g addEventHandler ["Killed",{_this call delete_guardia;}];
+_spawnAISg18g disableConversation true;
+_spawnAISg18g setdamage 0.01;
+ 
+};    
+};
+ 
+diag_log("DEBUG: Spawning " + str(_rndCountg18g) + " Taviana Guards from Group g18g at position " + str(_positiong18g));
+diag_log("Taviana Guards spawn Group g18g end");
+};
