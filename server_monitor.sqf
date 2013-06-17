@@ -1519,9 +1519,9 @@ east setFriend [sideLogic,1];
 _AISgroupg18g = createGroup east;  
 _modelarrayg18g = ["SectorZ_def","SectorZ_def","SectorZ_def"];
  
-_startposg18g = [14849.3,9924.72,2.8672];
+_startposg18g = [22485,20070,-0.044];
  
-_positiong18g = [14849.3,9924.72,2.8672];
+_positiong18g = [22485,20070,-0.044];
 _rndCountg18g = 11;
 _rnd = random 1;
 for "_x" from 1 to _rndCountg18g do {
@@ -1530,7 +1530,7 @@ _bodynameig18g = format ["TavianaGuardg18g%1",_x];
  
 if(_x == 1) then {
 _soldermodelg18g = _modelarrayg18g select (round(random ((count _modelarrayg18g) - 1)));
-_soldermodelg18g createunit [[14849.3,9924.72,2.8672], _AISgroupg18g, "_spawnTaviGroupLeaderg18g = this; TavianaSquadg18g = group this;"];
+_soldermodelg18g createunit [[22485,20070,-0.044], _AISgroupg18g, "_spawnTaviGroupLeaderg18g = this; TavianaSquadg18g = group this;"];
  
 _spawnTaviGroupLeaderg18g enableAI "TARGET";
 _spawnTaviGroupLeaderg18g enableAI "AUTOTARGET";
@@ -1551,7 +1551,7 @@ _spawnTaviGroupLeaderg18g setSkill ["spotTime",1];
 _spawnTaviGroupLeaderg18g setSkill ["courage",1];
 _spawnTaviGroupLeaderg18g setSkill ["reloadSpeed",1];
 _spawnTaviGroupLeaderg18g setSkill ["general",1];
-_spawnTaviGroupLeaderg18g setPosASL [14849.3,9924.72,2.8672];
+_spawnTaviGroupLeaderg18g setPosASL [22485,20070,-0.044];
 _spawnTaviGroupLeaderg18g addMagazine "ItemBandage";
 _spawnTaviGroupLeaderg18g addMagazine "ItemBandage";          
 _spawnTaviGroupLeaderg18g addweapon "Binocular";
